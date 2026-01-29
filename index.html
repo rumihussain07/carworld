@@ -4,91 +4,46 @@
     <title>CarWorld Workshop | Premium Finish</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* BACKGROUND ANIMATION ENGINE */
-        body {
-            margin: 0;
-            padding: 0;
-            background: #0a0a0a;
-            overflow-x: hidden;
-            /* This creates the moving glow effect */
-            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 100%);
-        }
-
-        .bg-glow {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 77, 77, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(255, 77, 77, 0.05) 0%, transparent 40%);
-            animation: moveGlow 15s infinite alternate ease-in-out;
-        }
-
-        @keyframes moveGlow {
-            0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.2) translate(5%, 5%); }
-        }
-
-        /* Elements Animation */
+        body { margin: 0; padding: 0; background: #0a0a0a; overflow-x: hidden; color: white; font-family: 'Segoe UI', Arial, sans-serif; }
+        .bg-glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 20% 30%, rgba(255, 77, 77, 0.05) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 77, 77, 0.05) 0%, transparent 40%); animation: moveGlow 15s infinite alternate ease-in-out; }
+        @keyframes moveGlow { 0% { transform: scale(1); } 100% { transform: scale(1.2); } }
         .service-box, .btn, img { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        section, header, .service-box {
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .service-box:hover { 
-            transform: translateY(-10px);
-            background: #161616 !important;
-            border-color: #ff4d4d !important;
-            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.15);
-        }
-
-        /* Floating Animation for Header */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        section, header, .service-box { animation: fadeInUp 1s ease-out forwards; }
+        .service-box:hover { transform: translateY(-10px); background: #161616 !important; border-color: #ff4d4d !important; box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2); }
         .main-title { animation: float 4s infinite ease-in-out; }
-
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
-<body style="font-family: 'Segoe UI', Arial, sans-serif; text-align: center; color: white;">
-
+<body>
     <div class="bg-glow"></div>
 
-    <header style="padding: 100px 20px;">
+    <header style="padding: 100px 20px; text-align: center;">
         <div class="main-title">
             <h1 style="font-size: clamp(40px, 10vw, 80px); margin: 0; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; line-height: 0.9;">
                 CARWORLD <br>
                 <span style="color: #ff4d4d;">WORKSHOP</span>
             </h1>
         </div>
-        <p style="color: #666; font-size: 14px; letter-spacing: 4px; margin-top: 20px; text-transform: uppercase;">
-            Kerala's Master Refinishers
-        </p>
+        <p style="color: #666; font-size: 14px; letter-spacing: 4px; margin-top: 20px; text-transform: uppercase;">Kerala's Master Refinishers</p>
     </header>
 
-    <div style="padding: 40px 20px;">
+    <div style="padding: 40px 20px; text-align: center;">
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            
             <div class="service-box" style="background: rgba(20,20,20,0.8); padding: 40px 20px; border-radius: 20px; width: 200px; border: 1px solid #222; backdrop-filter: blur(10px);">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="#ff4d4d"><path d="M17,8C17,9.11 16.11,10 15,10C13.89,10 13,9.11 13,8C13,6.89 13.89,6 15,6C16.11,6 17,6.89 17,8M7,14C8.11,14 9,13.11 9,12C9,10.89 8.11,10 7,10C5.89,10 5,10.89 5,12C5,13.11 5.89,14 7,14M19,15C19,15.55 18.55,16 18,16H17V19H15V16H9V19H7V16H6C5.45,16 5,15.55 5,15V14H19V15M19,12C19,10.9 18.1,10 17,10H16.82C16.42,8.27 14.86,7 13,7V3H11V7C9.14,7 7.58,8.27 7.18,10H7C5.9,10 5,10.9 5,12V13H19V12Z"/></svg>
-                <a href="patchwork.html" style="text-decoration: none; color: inherit;">
-    <div class="service-box" style="background: rgba(20,20,20,0.8); padding: 40px 20px; border-radius: 20px; width: 200px; border: 1px solid #222; backdrop-filter: blur(10px); cursor: pointer;">
-        <p style="font-size: 35px; margin: 0;">🛠️</p>
-        <h4 style="color: #fff; margin-top: 15px;">PATCHWORK</h4>
-        <span style="font-size: 10px; color: #ff4d4d; letter-spacing: 1px;">VIEW PROJECTS →</span>
-    </div>
-</a>
-            <div class="service-box" style="background: rgba(20,20,20,0.8); padding: 40px 20px; border-radius: 20px; width: 200px; border: 1px solid #222; backdrop-filter: blur(10px);">
-                <p style="font-size: 35px; margin: 0;">🛠️</p>
-                <h4 style="color: #fff; margin-top: 15px;">PATCHWORK</h4>
+                <h4 style="color: #fff; margin-top: 15px;">PAINTING</h4>
             </div>
+
+            <a href="patchwork.html" style="text-decoration: none; color: inherit;">
+                <div class="service-box" style="background: rgba(20,20,20,0.8); padding: 40px 20px; border-radius: 20px; width: 200px; border: 1px solid #222; backdrop-filter: blur(10px); cursor: pointer;">
+                    <p style="font-size: 35px; margin: 0;">🛠️</p>
+                    <h4 style="color: #fff; margin-top: 15px;">PATCHWORK</h4>
+                    <span style="color: #ff4d4d; font-size: 11px; font-weight: bold;">VIEW WORKS →</span>
+                </div>
+            </a>
+
             <div class="service-box" style="background: rgba(20,20,20,0.8); padding: 40px 20px; border-radius: 20px; width: 200px; border: 1px solid #222; backdrop-filter: blur(10px);">
                 <p style="font-size: 35px; margin: 0;">⛽</p>
                 <h4 style="color: #fff; margin-top: 15px;">GAS FITTING</h4>
@@ -96,43 +51,27 @@
         </div>
     </div>
 
-    <section style="padding: 80px 20px; background: rgba(15,15,15,0.6);">
+    <section style="padding: 80px 20px; text-align: center; background: rgba(15,15,15,0.6);">
         <h3 style="color: #444; text-transform: uppercase; letter-spacing: 5px; font-size: 12px;">The Challenge</h3>
         <div style="max-width: 600px; margin: 40px auto; border-radius: 20px; overflow: hidden; border: 1px solid #333;">
-            <img src="before.jpg" alt="Before" style="width: 100%; display: block; filter: grayscale(1) contrast(1.2);">
+            <img src="before.jpg" alt="Before" style="width: 100%; display: block;">
         </div>
     </section>
 
-    <section style="padding: 100px 20px; background: transparent;">
+    <section style="padding: 100px 20px; text-align: center;">
         <h3 style="color: #ff4d4d; text-transform: uppercase; letter-spacing: 5px; font-size: 12px;">The Result</h3>
         <div style="max-width: 800px; margin: 40px auto; border-radius: 20px; overflow: hidden; border: 1px solid #ff4d4d; box-shadow: 0 0 50px rgba(255, 77, 77, 0.2);">
             <img src="after.jpg" alt="After" style="width: 100%; display: block;">
         </div>
     </section>
 
-    <div style="padding: 100px 20px; background: #ff4d4d; color: black;">
+    <div style="padding: 100px 20px; background: #ff4d4d; color: black; text-align: center;">
         <h2 style="font-size: 40px; font-weight: 900; margin: 0;">GET A FREE QUOTE</h2>
-        <p style="font-weight: bold; margin-bottom: 40px;">Bring your car back to life today.</p>
-        <a href="tel:+919778357739" class="btn" style="background: #000; color: #fff; padding: 20px 50px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 10px; display: inline-block;">📞 CALL NOW</a>
-        <a href="https://wa.me/919778357739" class="btn" style="background: #fff; color: #25D366; padding: 20px 50px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 10px; display: inline-block;">💬 WHATSAPP</a>
+        <a href="tel:+918778357739" class="btn" style="background: #000; color: #fff; padding: 20px 50px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 20px; display: inline-block;">📞 CALL NOW</a>
     </div>
-    <section style="background: #000; padding: 0; line-height: 0;">
-        <div style="padding: 40px 20px; background: #0a0a0a;">
-            <h3 style="color: #444; text-transform: uppercase; letter-spacing: 5px; font-size: 12px; margin: 0;">Find Our Garage</h3>
-        </div>
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.123456789!2d76.1234567!3d10.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA3JzM0LjQiTiA3NsKwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890" 
-            width="100%" 
-            height="400" 
-            style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </section>
 
-    <footer style="padding: 40px; font-size: 10px; color: #444; letter-spacing: 2px;">
-        © 2026 CARWORLD WORKSHOP | QUALITY OVER EVERYTHING
-    </footer>
+    <iframe src="https://maps.google.com/?cid=14114199352178320956&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl" width="100%" height="400" style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);" loading="lazy"></iframe>
 
+    <footer style="padding: 40px; text-align: center; font-size: 10px; color: #444; letter-spacing: 2px;">© 2026 CARWORLD WORKSHOP</footer>
 </body>
 </html>
