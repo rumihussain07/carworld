@@ -33,53 +33,37 @@
         }
 
         .slider-input {
-            position: absolute;
-            inset: 0;
-            z-index: 10;
-            appearance: none;
-            background: transparent;
-            cursor: pointer;
+            position: absolute; inset: 0;
+            z-index: 10; appearance: none;
+            background: transparent; cursor: pointer;
         }
 
         .slider-line {
-            position: absolute;
-            top: 0; bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: #ff4d4d;
-            z-index: 5;
+            position: absolute; top: 0; bottom: 0;
+            left: 50%; width: 4px;
+            background: #ff4d4d; z-index: 5;
             pointer-events: none;
             box-shadow: 0 0 15px rgba(255,77,77,0.5);
         }
 
-        .service-box, .btn { transition: 0.3s ease; }
+        .service-box, .btn { transition: 0.3s ease; text-decoration: none; color: inherit; }
         .service-box:hover { transform: translateY(-10px); border-color: #ff4d4d !important; background: #111 !important; }
         
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        .badge { background: #ff4d4d; padding: 5px 15px; border-radius: 20px; font-size: 10px; font-weight: bold; animation: pulse 2s infinite; }
+        .contact-bar { padding: 15px; background: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; text-align: center; }
+        .badge { background: #ff4d4d; padding: 5px 15px; border-radius: 20px; font-size: 10px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header style="padding: 80px 20px; text-align: center;">
+    <div class="contact-bar">
+        <a href="tel:+918778357739" style="color: #ff4d4d; font-weight: bold; text-decoration: none; margin-right: 20px;">📞 +91 87783 57739</a>
+        <a href="https://wa.me/918778357739" style="color: #25D366; font-weight: bold; text-decoration: none;">💬 WHATSAPP NOW</a>
+    </div>
+
+    <header style="padding: 60px 20px; text-align: center;">
         <h1 style="font-size: clamp(30px, 8vw, 60px); margin: 0; font-weight: 900; letter-spacing: -2px; text-transform: uppercase;">CARWORLD <span style="color: #ff4d4d;">WORKSHOP</span></h1>
         <p style="color: #666; font-size: 12px; letter-spacing: 5px; margin-top: 10px;">PREMIUM RESTORATION KERALA</p>
     </header>
 
     <div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-        <div class="service-box" style="background: #000; padding: 30px; border-radius: 20px; width: 180px; border: 1px solid #222; text-align: center;">
-            <p style="font-size: 30px; margin: 0;">🎨</p>
-            <h4 style="color: #ff4d4d; margin-top: 10px;">PAINTING</h4>
-        </div>
-
-        <a href="patchwork.html" style="text-decoration: none; color: inherit;">
-            <div class="service-box" style="background: #000; padding: 30px; border-radius: 20px; width: 180px; border: 1px solid #222; text-align: center;">
-                <span class="badge">CLICK TO SEE WORK</span>
-                <p style="font-size: 30px; margin: 10px 0 0;">🛠️</p>
-                <h4 style="color: #ff4d4d; margin-top: 10px;">PATCHWORK</h4>
-            </div>
-        </a>
-    </div>
-
-    <section style="padding: 60px 20px; text-align: center;">
-        <h2 style="color: #ff4d4d; font-
+        <div class="service-box" style="background: #000; padding: 30px; border-radius: 20px; width: 180px; border: 1px solid #222; text-
