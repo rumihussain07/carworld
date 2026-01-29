@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patchwork Gallery | CarWorld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { background: #0a0a0a; color: white; font-family: sans-serif; text-align: center; margin: 0; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px; }
+        .work-card { background: #111; border-radius: 15px; overflow: hidden; border: 1px solid #222; }
+        .work-card img { width: 100%; display: block; filter: grayscale(0.5); transition: 0.3s; }
+        .work-card:hover img { filter: grayscale(0); transform: scale(1.05); }
+        .back-btn { display: inline-block; margin-top: 40px; color: #ff4d4d; text-decoration: none; font-weight: bold; border: 1px solid #ff4d4d; padding: 10px 20px; border-radius: 50px; }
+    </style>
+</head>
+<body>
+
+    <header style="padding: 60px 20px;">
+        <h1 style="color: #ff4d4d; text-transform: uppercase; letter-spacing: 2px;">Patchwork & Structural Repair</h1>
+        <p style="color: #666;">Precision metal work and dent removal gallery</p>
+    </header>
+
+    <div class="gallery-grid">
+        <div class="work-card">
+            <img src="patch1.jpg" alt="Rust Repair">
+            <div style="padding: 15px;">
+                <h4 style="margin: 0; color: #ff4d4d;">Rust Restoration</h4>
+                <p style="font-size: 12px; color: #888;">Complete panel replacement and welding.</p>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <img src="patch2.jpg" alt="Accident Repair">
+            <div style="padding: 15px;">
+                <h4 style="margin: 0; color: #ff4d4d;">Accident Recovery</h4>
+                <p style="font-size: 12px; color: #888;">Chassis alignment and dent pulling.</p>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <img src="patch3.jpg" alt="Custom Patch">
+            <div style="padding: 15px;">
+                <h4 style="margin: 0; color: #ff4d4d;">Panel Fabrication</h4>
+                <p style="font-size: 12px; color: #888;">Custom metal fabrication for vintage cars.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← BACK TO HOME</a>
+
+    <footer style="padding: 60px; color: #333; font-size: 12px;">CARWORLD WORKSHOP</footer>
+
+</body>
+</html>
