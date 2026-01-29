@@ -4,14 +4,46 @@
     <title>CarWorld Workshop | Premium Finish</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        .service-box, .btn, img { transition: all 0.3s ease; }
-        .service-box:hover { transform: translateY(-10px); border-color: #ff4d4d !important; }
-        .btn:hover { transform: scale(1.05); box-shadow: 0px 5px 15px rgba(255, 77, 77, 0.4); }
+        /* Base Transitions */
+        .service-box, .btn, img { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        
+        /* Entrance Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pulsing Button Animation */
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 77, 77, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+        }
+
+        section, header, .service-box {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .service-box:hover { 
+            transform: translateY(-15px) scale(1.02); 
+            border-color: #ff4d4d !important;
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);
+        }
+
+        .btn-pulse {
+            animation: pulse-red 2s infinite;
+        }
+
+        /* Hover effect for Before/After images */
+        .img-container:hover img {
+            transform: scale(1.05);
+            filter: brightness(1.1) !important;
+        }
     </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; background-color: #0a0a0a; color: white; margin: 0; padding: 0;">
+<body style="font-family: 'Segoe UI', Arial, sans-serif; text-align: center; background-color: #0a0a0a; color: white; margin: 0; padding: 0; overflow-x: hidden;">
 
-    <header style="padding: 60px 20px; background: linear-gradient(to bottom, #111, #0a0a0a);">
+    <header style="padding: 80px 20px; background: linear-gradient(to bottom, #111, #0a0a0a);">
         <h1 style="font-size: clamp(35px, 8vw, 70px); margin: 0; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; line-height: 0.9;">
             CARWORLD <br>
             <span style="color: #ff4d4d;">WORKSHOP</span>
@@ -19,66 +51,61 @@
         <p style="color: #666; font-size: 16px; letter-spacing: 3px; margin-top: 15px; text-transform: uppercase;">
             Expert Painting • Patchwork • Gas Conversions
         </p>
-        <div style="width: 50px; height: 3px; background: #ff4d4d; margin: 20px auto;"></div>
+        <div style="width: 60px; height: 4px; background: #ff4d4d; margin: 25px auto; border-radius: 2px;"></div>
     </header>
 
     <div style="padding: 40px 20px;">
-        <h2 style="color: #ff4d4d; letter-spacing: 2px; font-size: 14px; text-transform: uppercase; margin-bottom: 30px;">Our Specializations</h2>
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <h2 style="color: #ff4d4d; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; margin-bottom: 40px;">Our Specializations</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
             
-            <div class="service-box" style="background: #111; padding: 30px 20px; border-radius: 20px; width: 220px; border: 1px solid #222; display: flex; flex-direction: column; align-items: center;">
+            <div class="service-box" style="background: #111; padding: 35px 20px; border-radius: 20px; width: 220px; border: 1px solid #222; display: flex; flex-direction: column; align-items: center;">
                 <svg width="50" height="50" viewBox="0 0 24 24" fill="#ff4d4d" style="margin-bottom: 15px;">
                     <path d="M17,8C17,9.11 16.11,10 15,10C13.89,10 13,9.11 13,8C13,6.89 13.89,6 15,6C16.11,6 17,6.89 17,8M7,14C8.11,14 9,13.11 9,12C9,10.89 8.11,10 7,10C5.89,10 5,10.89 5,12C5,13.11 5.89,14 7,14M19,15C19,15.55 18.55,16 18,16H17V19H15V16H9V19H7V16H6C5.45,16 5,15.55 5,15V14H19V15M19,12C19,10.9 18.1,10 17,10H16.82C16.42,8.27 14.86,7 13,7V3H11V7C9.14,7 7.58,8.27 7.18,10H7C5.9,10 5,10.9 5,12V13H19V12Z" />
                 </svg>
-                <h4 style="color: #ff4d4d; margin: 0; letter-spacing: 1px;">PAINTING</h4>
+                <h4 style="color: #fff; margin: 0; letter-spacing: 1px; font-size: 14px;">PREMIUM PAINTING</h4>
             </div>
 
-            <div class="service-box" style="background: #111; padding: 30px 20px; border-radius: 20px; width: 220px; border: 1px solid #222;">
+            <div class="service-box" style="background: #111; padding: 35px 20px; border-radius: 20px; width: 220px; border: 1px solid #222;">
                 <p style="font-size: 40px; margin: 0;">🛠️</p>
-                <h4 style="color: #ff4d4d; margin: 15px 0 0; letter-spacing: 1px;">PATCHWORK</h4>
+                <h4 style="color: #fff; margin: 15px 0 0; letter-spacing: 1px; font-size: 14px;">BODY PATCHWORK</h4>
             </div>
 
-            <div class="service-box" style="background: #111; padding: 30px 20px; border-radius: 20px; width: 220px; border: 1px solid #222;">
+            <div class="service-box" style="background: #111; padding: 35px 20px; border-radius: 20px; width: 220px; border: 1px solid #222;">
                 <p style="font-size: 40px; margin: 0;">⛽</p>
-                <h4 style="color: #ff4d4d; margin: 15px 0 0; letter-spacing: 1px;">GAS FITTING</h4>
+                <h4 style="color: #fff; margin: 15px 0 0; letter-spacing: 1px; font-size: 14px;">GAS FITTING</h4>
             </div>
         </div>
     </div>
 
-    <section style="padding: 60px 20px; background-color: #1a1a1a;">
-        <h2 style="color: #888; font-size: 12px; letter-spacing: 4px; text-transform: uppercase;">The Challenge</h2>
-        <h3 style="font-size: 24px; margin-bottom: 30px;">Damaged & Faded Condition</h3>
-        <div style="max-width: 600px; margin: 0 auto;">
-            <img src="before.jpg" alt="Before Restoration" style="width: 100%; border-radius: 10px; filter: grayscale(1) opacity(0.6); border: 1px solid #333;">
-            <p style="margin-top: 15px; color: #666; font-style: italic;">Original state with body damage and faded paint.</p>
+    <section class="img-container" style="padding: 80px 20px; background-color: #161616;">
+        <h2 style="color: #666; font-size: 12px; letter-spacing: 4px; text-transform: uppercase;">The Challenge</h2>
+        <h3 style="font-size: 28px; margin-bottom: 40px; font-weight: 300;">Worn Out & Damaged</h3>
+        <div style="max-width: 700px; margin: 0 auto; overflow: hidden; border-radius: 15px;">
+            <img src="before.jpg" alt="Before" style="width: 100%; display: block; filter: grayscale(1) brightness(0.6);">
         </div>
     </section>
 
-    <section style="padding: 80px 20px; background-color: #000; border-top: 3px solid #ff4d4d;">
+    <section class="img-container" style="padding: 100px 20px; background-color: #000; border-top: 2px solid #ff4d4d;">
         <h2 style="color: #ff4d4d; font-size: 12px; letter-spacing: 4px; text-transform: uppercase;">The Result</h2>
-        <h3 style="font-size: 32px; margin-bottom: 30px;">Premium Showroom Restoration</h3>
-        <div style="max-width: 800px; margin: 0 auto;">
-            <img src="after.jpg" alt="After Restoration" style="width: 100%; border-radius: 15px; border: 2px solid #ff4d4d; box-shadow: 0px 0px 40px rgba(255, 77, 77, 0.3);">
-            <div style="margin-top: 30px; padding: 25px; background: #111; border-radius: 15px; border-left: 5px solid #ff4d4d; text-align: left; display: inline-block;">
-                <p style="margin: 0; color: #ccc; line-height: 1.8;">
-                    <strong>Work Completed:</strong><br>
-                    ✅ Precision Patchwork & Dent Removal<br>
-                    ✅ High-Gloss Premium Paint Match<br>
-                    ✅ Ceramic Protection Layer
-                </p>
-            </div>
+        <h3 style="font-size: 36px; margin-bottom: 40px; font-weight: 800;">Flawless Perfection</h3>
+        <div style="max-width: 850px; margin: 0 auto; overflow: hidden; border-radius: 20px; border: 1px solid #333;">
+            <img src="after.jpg" alt="After" style="width: 100%; display: block; box-shadow: 0 0 50px rgba(255,77,77,0.1);">
+        </div>
+        <div style="margin-top: 40px; display: inline-block; padding: 20px 40px; border: 1px solid #ff4d4d; border-radius: 50px; color: #ff4d4d; font-weight: bold; letter-spacing: 1px;">
+            100% CUSTOMER SATISFACTION
         </div>
     </section>
 
-    <div style="background: #ff4d4d; padding: 60px 20px;">
-        <h2 style="margin: 0; font-size: 28px;">Ready to restore your car?</h2>
-        <p style="margin-bottom: 30px; font-weight: bold;">Contact CarWorld Workshop today.</p>
-        <a href="tel:+918778357739" class="btn" style="background: #000; color: #fff; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 10px; display: inline-block;">📞 CALL NOW</a>
-        <a href="https://wa.me/919778357739" class="btn" style="background: #25D366; color: #fff; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 10px; display: inline-block;">💬 WHATSAPP</a>
+    <div style="background: #ff4d4d; padding: 80px 20px; color: black;">
+        <h2 style="margin: 0; font-size: 35px; font-weight: 900; text-transform: uppercase;">Revive Your Ride</h2>
+        <p style="margin: 15px 0 40px; font-size: 18px; opacity: 0.8;">Quality work doesn't have to be expensive.</p>
+        <a href="tel:+918778357739" class="btn" style="background: #000; color: #fff; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 10px; display: inline-block; font-size: 14px; letter-spacing: 1px;">CALL NOW</a>
+        <a href="https://wa.me/919778357739" class="btn btn-pulse" style="background: #fff; color: #25D366; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 10px; display: inline-block; font-size: 14px; letter-spacing: 1px;">WHATSAPP</a>
     </div>
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.91!2d76.34!3d10.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDAwJzM2LjAiTiA3NsKwMjAnMjQuMCJF!5e0!3m2!1sen!2sin!4v1625000000000!5m2!1sen!2sin" width="100%" height="350" style="border:0; filter: grayscale(1) invert(1);" allowfullscreen="" loading="lazy"></iframe>
-    <footer style="padding: 30px; color: #444; font-size: 12px;">© 2026 CARWORLD WORKSHOP</footer>
+    <footer style="padding: 50px; background: #050505; color: #333; font-size: 12px; letter-spacing: 2px;">
+        © 2026 CARWORLD WORKSHOP | KERALA
+    </footer>
 
 </body>
 </html>
