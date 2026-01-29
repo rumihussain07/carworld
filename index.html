@@ -4,103 +4,89 @@
     <title>CarWorld Workshop | Premium Finish</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { margin: 0; padding: 0; background: #0a0a0a; color: white; font-family: 'Segoe UI', Arial, sans-serif; overflow-x: hidden; }
+        /* MOVING BACKGROUND ENGINE */
+        body { 
+            margin: 0; padding: 0; background: #0a0a0a; color: white; 
+            font-family: 'Segoe UI', Arial, sans-serif; overflow-x: hidden; 
+        }
         
-       
+        .bg-glow {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 77, 77, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 77, 77, 0.07) 0%, transparent 40%);
+            animation: moveGlow 10s infinite alternate ease-in-out;
+        }
 
-        /* Service Boxes */
+        @keyframes moveGlow {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(2%, 2%); }
+        }
+
+        /* FLOATING TEXT ANIMATION */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .main-title { animation: float 4s infinite ease-in-out; }
+
+        /* REVEAL ANIMATION */
+        .reveal { animation: fadeInUp 1s ease-out forwards; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sticky Top Contact Bar */
+        .contact-bar { 
+            padding: 15px; background: rgba(17, 17, 17, 0.9); border-bottom: 1px solid #222; 
+            position: sticky; top: 0; z-index: 100; text-align: center; backdrop-filter: blur(10px);
+        }
+
         .service-box { 
-            background: #000; 
-            padding: 30px; 
-            border-radius: 20px; 
-            width: 160px; 
-            border: 1px solid #222; 
-            text-align: center;
-            transition: 0.3s ease;
-            text-decoration: none;
-            color: inherit;
+            background: rgba(0,0,0,0.8); padding: 30px; border-radius: 20px; width: 160px; 
+            border: 1px solid #222; text-align: center; transition: 0.3s ease; text-decoration: none; color: inherit;
         }
-        .service-box:hover { transform: translateY(-10px); border-color: #ff4d4d !important; }
+        .service-box:hover { transform: translateY(-10px); border-color: #ff4d4d !important; background: #111 !important; }
 
-        /* Classic Image Styling */
-        .work-img-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .work-img { 
-            width: 100%; 
-            border-radius: 15px; 
-            border: 1px solid #333; 
-            margin-bottom: 10px;
-            display: block;
-        }
-        .img-label { color: #666; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; }
-
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .work-img { width: 100%; border-radius: 15px; border: 1px solid #333; margin-bottom: 10px; display: block; }
         .badge { background: #ff4d4d; padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: bold; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
     </style>
 </head>
 <body>
 
+    <div class="bg-glow"></div>
+
     <div class="contact-bar">
-        <a href="tel:+918778357739" style="color: #ff4d4d; font-weight: bold; text-decoration: none; margin-right: 15px; font-size: 14px;">📞 CALL: +91 87783 57739</a>
-        <a href="https://wa.me/918778357739" target="_blank" style="color: #25D366; font-weight: bold; text-decoration: none; font-size: 14px;">💬 WHATSAPP NOW</a>
+        <a href="tel:+918778357739" style="color: #ff4d4d; font-weight: bold; text-decoration: none; margin-right: 15px;">📞 CALL: +91 87783 57739</a>
+        <a href="https://wa.me/918778357739" style="color: #25D366; font-weight: bold; text-decoration: none;">💬 WHATSAPP</a>
     </div>
 
     <header style="padding: 60px 20px; text-align: center;">
-        <h1 style="font-size: clamp(30px, 8vw, 60px); margin: 0; font-weight: 900; letter-spacing: -2px; text-transform: uppercase;">CARWORLD <span style="color: #ff4d4d;">WORKSHOP</span></h1>
+        <div class="main-title">
+            <h1 style="font-size: clamp(30px, 8vw, 60px); margin: 0; font-weight: 900; letter-spacing: -2px; text-transform: uppercase;">CARWORLD <span style="color: #ff4d4d;">WORKSHOP</span></h1>
+        </div>
         <p style="color: #666; font-size: 12px; letter-spacing: 5px; margin-top: 10px;">PREMIUM RESTORATION KERALA</p>
     </header>
 
-    <div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+    <div class="reveal" style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        <div class="service-box"><p style="font-size: 30px; margin: 0;">🎨</p><h4 style="color: #ff4d4d; margin-top: 10px;">PAINTING</h4></div>
         
-        <div class="service-box">
-            <p style="font-size: 30px; margin: 0;">🎨</p>
-            <h4 style="color: #ff4d4d; margin-top: 10px;">PAINTING</h4>
-        </div>
-
         <a href="patchwork.html" class="service-box">
             <span class="badge">VIEW WORK</span>
             <p style="font-size: 30px; margin: 10px 0 0;">🛠️</p>
             <h4 style="color: #ff4d4d; margin-top: 10px;">PATCHWORK</h4>
         </a>
 
-        <div class="service-box">
-            <p style="font-size: 30px; margin: 0;">⛽</p>
-            <h4 style="color: #ff4d4d; margin-top: 10px;">LPG FITTING</h4>
-        </div>
-
+        <div class="service-box"><p style="font-size: 30px; margin: 0;">⛽</p><h4 style="color: #ff4d4d; margin-top: 10px;">LPG FITTING</h4></div>
     </div>
 
-    <section style="padding: 40px 0; text-align: center;">
-        <h2 style="color: #ff4d4d; font-size: 14px; letter-spacing: 3px; margin-bottom: 40px;">THE TRANSFORMATION</h2>
-        
-        <div class="work-img-container">
-            <img src="before.jpg" class="work-img" alt="Before" style="filter: grayscale(1) opacity(0.6);">
-            <p class="img-label">Condition Before</p>
-
-            <div style="height: 1px; background: #222; width: 100px; margin: 40px auto;"></div>
-
-            <img src="after.jpg" class="work-img" alt="After" style="border-color: #ff4d4d; box-shadow: 0 0 30px rgba(255,77,77,0.15);">
-            <p class="img-label" style="color: #ff4d4d;">Premium Finish After</p>
-        </div>
-    </section>
-
-    <div style="padding: 80px 20px; background: #ff4d4d; text-align: center; color: black;">
-        <h2 style="font-weight: 900; margin: 0; font-size: 32px; text-transform: uppercase;">Ready to restore?</h2>
-        <p style="font-weight: bold; margin-bottom: 30px;">Professional Patchwork, Paint & LPG Fitting</p>
-        
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-            <a href="tel:+918778357739" style="background: black; color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block;">📞 CALL NOW</a>
-            <a href="https://wa.me/918778357739" target="_blank" style="background: #25D366; color: white; padding: 18px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block;">💬 WHATSAPP</a>
-        </div>
-    </div>
-
-    <iframe 
-        src="http://googleusercontent.com/maps.google.com/7" 
-        width="100%" height="400" style="border:0; filter: grayscale(1) invert(0.9) contrast(1.2);" allowfullscreen="" loading="lazy">
-    </iframe>
-
-    <footer style="padding: 40px; text-align: center; font-size: 10px; color: #444; letter-spacing: 2px;">
-        © 2026 CARWORLD WORKSHOP | KERALA
-    </footer>
-
-</body>
-</html>
+    <section class="reveal" style="padding: 40px 20px; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: #666; font-size: 12px; letter-spacing: 3px;">THE TRANSFORMATION</h2>
+            <img src="before.jpg" class="work-img" alt="Before" style="filter: grayscale(1); opacity: 0.6; margin-top: 20px;">
+            <p style="color: #444; font-size: 12px; margin-bottom: 40px;">CONDITION BEFORE</p>
+            
+            <img src="after.jpg" class="work-img" alt="After" style="border-color: #ff4d4d; box
