@@ -27,43 +27,89 @@
             display: block;
         }
 
+        /* THE "AFTER" IMAGE LAYER */
         .after-image {
             z-index: 2;
+            /* This is the magic: we hide part of the image based on the slider value */
             clip-path: inset(0 0 0 50%); 
         }
 
+        /* THE SLIDER BAR */
         .slider-input {
-            position: absolute; inset: 0;
-            z-index: 10; appearance: none;
-            background: transparent; cursor: pointer;
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
         }
 
         .slider-line {
-            position: absolute; top: 0; bottom: 0;
-            left: 50%; width: 4px;
-            background: #ff4d4d; z-index: 5;
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #ff4d4d;
+            z-index: 5;
             pointer-events: none;
             box-shadow: 0 0 15px rgba(255,77,77,0.5);
         }
 
-        .service-box, .btn { transition: 0.3s ease; text-decoration: none; color: inherit; }
+        .service-box, .btn { transition: 0.3s ease; }
         .service-box:hover { transform: translateY(-10px); border-color: #ff4d4d !important; background: #111 !important; }
         
-        .contact-bar { padding: 15px; background: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 100; text-align: center; }
-        .badge { background: #ff4d4d; padding: 5px 15px; border-radius: 20px; font-size: 10px; font-weight: bold; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .badge { background: #ff4d4d; padding: 5px 15px; border-radius: 20px; font-size: 10px; font-weight: bold; animation: pulse 2s infinite; }
     </style>
 </head>
 <body>
 
-    <div class="contact-bar">
-        <a href="tel:+918778357739" style="color: #ff4d4d; font-weight: bold; text-decoration: none; margin-right: 20px;">📞 +91 87783 57739</a>
-        <a href="https://wa.me/918778357739" style="color: #25D366; font-weight: bold; text-decoration: none;">💬 WHATSAPP NOW</a>
-    </div>
-
-    <header style="padding: 60px 20px; text-align: center;">
+    <header style="padding: 80px 20px; text-align: center;">
         <h1 style="font-size: clamp(30px, 8vw, 60px); margin: 0; font-weight: 900; letter-spacing: -2px; text-transform: uppercase;">CARWORLD <span style="color: #ff4d4d;">WORKSHOP</span></h1>
         <p style="color: #666; font-size: 12px; letter-spacing: 5px; margin-top: 10px;">PREMIUM RESTORATION KERALA</p>
     </header>
 
     <div style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-        <div class="service-box" style="background: #000; padding: 30px; border-radius: 20px; width: 180px; border: 1px solid #222; text-
+        <div class="service-box" style="background: #000; padding: 30px; border-radius: 20px; width: 180px; border: 1px solid #222; text-align: center;">
+            <p style="font-size: 30px; margin: 0;">🎨</p>
+            <h4 style="color: #ff4d4d; margin-top: 10px;">PAINTING</h4>
+        </div>
+
+        <a href="patchwork.html" style="text-decoration: none; color: inherit;">
+            <div class="service-box" style="background: #000; padding: 30px; border-radius: 20px; width: 180px; border: 1px solid #222; text-align: center;">
+                <span class="badge">CLICK TO SEE WORK</span>
+                <p style="font-size: 30px; margin: 10px 0 0;">🛠️</p>
+                <h4 style="color: #ff4d4d; margin-top: 10px;">PATCHWORK</h4>
+            </div>
+        </a>
+    </div>
+
+    <section style="padding: 60px 20px; text-align: center;">
+        <h2 style="color: #ff4d4d; font-size: 14px; letter-spacing: 3px;">THE TRANSFORMATION</h2>
+        <p style="color: #666; margin-bottom: 30px;">Slide the bar to see the difference</p>
+        
+        <div class="comparison-slider">
+            <img src="before.jpg" alt="Before">
+            
+            <img src="after.jpg" alt="After" class="after-image" id="afterImage">
+            
+            <div class="slider-line" id="sliderLine"></div>
+            
+            <input type="range" min="0" max="100" value="50" class="slider-input" oninput="moveSlider(this.value)">
+        </div>
+    </section>
+
+    <div style="padding: 60px 20px; background: #ff4d4d; text-align: center; color: black;">
+        <h2 style="font-weight: 900;">READY FOR A RE-PAINT?</h2>
+        <a href="tel:+918778357739" style="background: black; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 10px;">CONTACT US NOW</a>
+    </div>
+
+    <script>
+        function moveSlider(value) {
+            document.getElementById('afterImage').style.clipPath = `inset(0 0 0 ${value}%)`;
+            document.getElementById('sliderLine').style.left = `${value}%`;
+        }
+    </script>
+
+</body>
+</html>
